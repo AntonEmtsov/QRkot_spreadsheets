@@ -1,1 +1,40 @@
-# QRkot_spreadseets
+# QRKot
+# Благотворительный фонд поддержки котиков
+
+### Тенологии используемые в проекте:
+- Python 3.11.3
+- SQLAlchemy 1.4.36
+- Fastapi 0.78.0
+- Alembic 1.7.7
+- Uvicorn 0.17.6
+
+### Как запустить проект:
+Клонировать репозиторий:
+```
+git clone https://github.com/russ044/cat_charity_fund.git
+```
+Создать и активировать виртуальное окружение:
+```
+python -m venv venv
+.\venv\Scripts\activate
+```
+Установить зависимостей:
+```
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+Создать и заполнить .env -> Пример заполнения в .env-example
+
+Выполнить миграции:
+```
+alembic upgrade head
+```
+Запустить:
+```
+uvicorn app.main:app --reload
+```
+Документация по API:
+- [http://localhost:8000/docs](http://localhost:8000/docs)
+
+### Автор проекта:
+- Емцов Антон [russ044](https://github.com/russ044)
