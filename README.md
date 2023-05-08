@@ -1,17 +1,18 @@
 # QRKot
 # Благотворительный фонд поддержки котиков
 
-### Тенологии используемые в проекте:
+### Технологии используемые в проекте:
 - Python 3.11.3
 - SQLAlchemy 1.4.36
 - Fastapi 0.78.0
 - Alembic 1.7.7
 - Uvicorn 0.17.6
+- Aiogoogle 4.2.0
 
 ### Как запустить проект:
 Клонировать репозиторий:
 ```
-git clone https://github.com/russ044/cat_charity_fund.git
+git clone https://github.com/russ044/QRkot_spreadsheets.git
 ```
 Создать и активировать виртуальное окружение:
 ```
