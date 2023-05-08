@@ -1,3 +1,4 @@
+from copy import deepcopy
 from datetime import datetime
 
 from aiogoogle import Aiogoogle
@@ -41,7 +42,7 @@ async def spreadsheets_create(
     spreadsheet_body: dict = SPREADSHEET_BODY,
 ) -> str:
     date_time_now = datetime.now().strftime(FORMAT)
-    spreadsheet_body = spreadsheet_body.copy()
+    spreadsheet_body = deepcopy(spreadsheet_body)
     spreadsheet_body['properties']['title'] = SPREADSHEET_TITLE.format(
         date_time_now=date_time_now,
     )
@@ -74,7 +75,7 @@ async def spreadsheets_update_value(
 ) -> None:
     date_time_now = datetime.now().strftime(FORMAT)
     service = await wrapper_services.discover('sheets', 'v4')
-    table_head = SPREADSHEET_HEADER.copy()
+    table_head = deepcopy(SPREADSHEET_HEADER)
     table_head[0][1] = date_time_now
     table_values = [
         *table_head,
@@ -85,7 +86,7 @@ async def spreadsheets_update_value(
         ])) for project in charity_projects]
     ]
     rows = len(table_values)
-    columns = max([len(row) for row in table_values])
+    columns = max(map(len, table_values))
     if columns > COLUMN_COUNT or rows > ROW_COUNT:
         raise ValueError(SPREADSHEET_VALUE_ERROR.format(
             rows_count=rows,
