@@ -1,7 +1,7 @@
 """migration name
 
 Revision ID: 79df8e4d7c88
-Revises: 
+Revises:
 Create Date: 2023-05-04 18:30:07.864914
 
 """
